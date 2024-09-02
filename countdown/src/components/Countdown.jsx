@@ -37,25 +37,32 @@ const Countdown = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
+        <div className="flex flex-col items-center justify-center h-screen text-white">
             <input
                 type="datetime-local"
                 onChange={handleChange}
-                className="mb-4 p-2 border rounded"
+                className="mb-9 p-2 border rounded bg-transparent absolute top-7 right-7"
             />
-            <div className="flex gap-4">
+            <div className="flex gap-8 justify-center items-center p-10 glass">
                 {Object.entries(countdown).map(([unit, value]) => (
                     <div key={unit} className="flex flex-col items-center">
                         <div className="relative">
-                            <div className="countdown-item text-5xl font-bold">
+                            <div
+                                className="countdown-item text-9xl font-semibold w-48 text-center"
+                            // w-28 ensures that all digits have a constant width.
+                            >
                                 {value.toString().padStart(2, '0')}
                             </div>
-                            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-t from-gray-600"></div>
+                            <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-t from-gray-600 to-transparent"></div>
                         </div>
-                        <div className="text-lg">{unit.charAt(0).toUpperCase() + unit.slice(1)}</div>
+                        <div className="text-3xl mt-4 uppercase tracking-widest">
+                            {unit.charAt(0).toUpperCase() + unit.slice(1)}
+                        </div>
                     </div>
                 ))}
             </div>
+
+
         </div>
     );
 };
