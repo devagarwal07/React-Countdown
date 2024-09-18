@@ -12,7 +12,7 @@ const App = () => {
       style={{ backgroundImage: `url(${bg})` }}
     >
 
-      <h1 className="text-5xl mt-7 text-white font-serif mb-10">CryptoGaurd</h1>
+      <h1 className="text-5xl mt-7 text-white font-serif mb-10">CryptoGuard</h1>
 
       {/* Input field to take the current round */}
       <input
